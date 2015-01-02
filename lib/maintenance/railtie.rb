@@ -4,7 +4,7 @@ class MaintenanceRailtie < Rails::Railtie
   end
 
   rake_tasks do
-    load 'lib/tasks/maintenance.rake'
+    load 'tasks/maintenance.rake'
   end
 
 end
