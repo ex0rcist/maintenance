@@ -16,7 +16,7 @@ class Rack::Maintenance
       data = File.read(file)
       [503, {'Content-Type' => content_type, 'Content-Length' => data.length.to_s}, [data]]
     else
-      app.call(env)
+      @app.call(env)
     end
   end
 
