@@ -1,7 +1,7 @@
 namespace :maintenance do
 
   desc 'Turn on site to maintenance mode'
-  task :on do
+  task on: :environment do
     local_basename = Rails.root.join('lib/rack/templates/maintenance.html')
     gem_basename = File.expand_path('../..', __FILE__) + '/rack/templates/maintenance.html'
 
@@ -10,7 +10,7 @@ namespace :maintenance do
   end
 
   desc 'Turn off site from maintenance mode'
-  task :off do
+  task off: :environment do
     `rm #{Rails.root.join('public/maintenance.html')}`
   end
 
