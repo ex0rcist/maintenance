@@ -6,12 +6,12 @@ namespace :maintenance do
     gem_basename = File.expand_path('../..', __FILE__) + '/rack/templates/maintenance.html'
 
     source = File.exists?(local_basename) ? local_basename : gem_basename
-    `cp #{source} #{Rails.root.join('public/maintenance.html')}`
+    `cp #{source} #{Rails.root.join('public/system/maintenance.html')}`
   end
 
   desc 'Turn off site from maintenance mode'
   task off: :environment do
-    `rm #{Rails.root.join('public/maintenance.html')}`
+    `rm #{Rails.root.join('public/system/maintenance.html')}`
   end
 
 end
