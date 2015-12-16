@@ -6,6 +6,8 @@ namespace :maintenance do
     gem_basename = File.expand_path('../..', __FILE__) + '/rack/templates/maintenance.html'
 
     source = File.exists?(local_basename) ? local_basename : gem_basename
+
+    `mkdir -p #{Rails.root.join('public/system')}`
     `cp #{source} #{Rails.root.join('public/system/maintenance.html')}`
   end
 
